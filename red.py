@@ -33,6 +33,7 @@ try:
     while True:
         if GPIO.input(26) == GPIO.LOW and player is None:
             print("Button pressed, starting playback...")
+            time.sleep(0.8)
             player = play_random_audio()
             while GPIO.input(26) == GPIO.LOW:
                 time.sleep(0.1)
