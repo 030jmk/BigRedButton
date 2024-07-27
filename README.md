@@ -2,7 +2,7 @@
 A tiny Raspberry Pi 3 project that plays random audio responses from a collection of audio files, simulating the classic Magic Eight Ball game by pressing a big red button.
 
 
-# Features
+# Fun because
 - Hold the big red button to hear a random response.
 - Optional: Add your own audio files.
 
@@ -24,7 +24,7 @@ python red.py
 ```
 
 
-### Automated start and restart
+# Automated start and restart
 1. Copy the .service file to the systemd system directory:
 ```
 sudo cp redbutton.service /etc/systemd/system/
@@ -41,4 +41,4 @@ sudo systemctl enable redbutton.service
 ```
 sudo systemctl status redbutton.service
 ```
-7. 
+
