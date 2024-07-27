@@ -1,0 +1,12 @@
+[Unit]
+Description=Random audios played back by holding down the big red button
+After=multi-user.target
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/BigRedButton/redbutton.py
+WorkingDirectory=/home/pi/BigRedButton
+User=pi
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
