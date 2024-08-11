@@ -42,4 +42,7 @@ sudo systemctl enable redbutton.service
 ```
 sudo systemctl status redbutton.service
 ```
-
+5. Restart the system
+```
+sudo reboot
+```
