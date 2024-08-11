@@ -1,5 +1,5 @@
 # BigRedButton
-A tiny Raspberry Pi 3 project that plays random audio responses from a collection of audio files, simulating the classic Magic Eight Ball game by pressing a big red button.
+A tiny Raspberry Pi project that plays random audio responses from a collection of audio files, simulating the classic Magic Eight Ball game by pressing a big red button instead of shacking something.
 
 
 # Fun because
@@ -13,12 +13,13 @@ git clone https://github.com/030jmk/BigRedButton.git
 ```
 3. Install Dependencies:
 ```
-sudo apt-get install sox
+sudo apt-get install sox libsox-fmt-mp3
 ```
 3. Add Audio Files: Place .wav and .mp3 files in the audio folder.
-4. Connect a Button: Use GPIO pin 26 on the Raspberry Pi.
-5. Connect a speaker to the 3.5mm audio output jack.
-6. Run the Script.
+4. Connect a Button: Use GPIO pin 26 and one of the Ground pins on the Raspberry Pi.
+5. Connect a speaker to the 3.5mm audio output jack (of an adapter).
+6. (optional) use and external amplifier and set the correct audio output with `sudo raspi-config`.
+7. Run the Script.
 ```
 python red.py
 ```
