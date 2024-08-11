@@ -21,7 +21,7 @@ sudo apt-get install sox libsox-fmt-mp3
 6. (optional) use and external amplifier and set the correct audio output with `sudo raspi-config`.
 7. Run the Script.
 ```
-python red.py
+python redbutton.py
 ```
 
 
