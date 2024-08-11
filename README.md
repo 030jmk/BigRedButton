@@ -34,9 +34,11 @@ sudo cp redbutton.service /etc/systemd/system/
 ```
 sudo systemctl daemon-reload
 ```
-3. Enable the service to start on boot:
+3. Enable and start the service to start on boot:
 ```
 sudo systemctl enable redbutton.service
+sudo systemctl start redbutton.service
+
 ```
 4. Check the status of the service to ensure it's running:
 ```
