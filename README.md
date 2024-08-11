@@ -6,7 +6,7 @@ A tiny Raspberry Pi project that plays random audio responses from a collection 
 - Hold the big red button to hear a random response.
 - Optional: Add your own audio files.
 
-# 
+# Step by Step
 1. Clone the Repository:
 ```
 git clone https://github.com/030jmk/BigRedButton.git
@@ -18,10 +18,34 @@ sudo apt-get install sox libsox-fmt-mp3
 3. Add Audio Files: Place .wav and .mp3 files in the audio folder.
 4. Connect a Button: Use GPIO pin 26 and one of the Ground pins on the Raspberry Pi.
 5. Connect a speaker to the 3.5mm audio output jack (of an adapter).
-6. (optional) use and external amplifier and set the correct audio output with `sudo raspi-config`.
-7. Run the Script.
+6. If external amplifier or sound card is used, set the correct output with. Find the available devices with `aplay -l` which may look like so:
 ```
-python redbutton.py
+**** List of PLAYBACK Hardware Devices ****
+card 0: vc4hdmi [vc4-hdmi], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 1: Headset [Logitech G430 Gaming Headset], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+7. Edit /etc/asound.conf with `sudo nano /etc/asound.conf` and use the following configuration to set the USB audio device as the default (since the USB audio device is card 1 it would then look like so:
+```
+pcm.!default {
+    type hw
+    card 1
+    device 0
+}
+
+ctl.!default {
+    type hw
+    card 1
+}
+```
+9. Save the file and exit the editor (in nano, CTRL + X, then Y, and Enter).
+
+8. Run the Script for testing purposes
+```
+python BigRedButton/redbutton.py
 ```
 
 
